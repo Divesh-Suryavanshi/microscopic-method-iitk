@@ -1,1 +1,52 @@
-/* You CSS goes in here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+
+.experiment-area {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr; */
+  justify-items: center;
+  align-items: center;
+}
+
+.experiment-area > * {
+  transform: translate(0, 40px);
+}
+
+.experiment-area > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#microscope {
+  width: 400px;
+  transform: translate(0, 0);
+}
+
+#eye-micrometer {
+  width: 50px;
+}
+
+#stage-micrometer {
+  width: 150px;
+}
+
+#stirer {
+  grid-column: 4;
+}
