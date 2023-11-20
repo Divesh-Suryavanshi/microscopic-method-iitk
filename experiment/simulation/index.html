@@ -3,19 +3,37 @@
   <head>
     <link rel="stylesheet" href="./css/beaker.css" />
     <link rel="stylesheet" href="./css/stirer.css" />
+    <link rel="stylesheet" href="./css/view.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <div class="experiment-area">
       <img src="./images/Compound_Microscope.png" id="microscope" alt="" />
       <img src="./images/eye-piece-micrometer.png" id="eye-micrometer" alt="" />
-      <img src="./images/stage-micrometer.png" id="stage-micrometer" alt="" />
+      <div id="stage-micrometer">
+        <img src="./images/stage-micrometer.png" alt="" />
+        <div id="salt"></div>
+      </div>
       <span>
         <div class="beaker"><div class="sediment"></div></div>
         <div id="stirer"></div>
       </span>
     </div>
+    <div class="view">
+      <div class="stage">
+        <canvas width="500px" height="500px"></canvas>
+        <!-- <div class="eye-piece"></div> -->
+      </div>
+      <div class="eye-piece">
+        <canvas width="500px" height="500px"></canvas>
+        <!-- <div class="eye-piece"></div> -->
+      </div>
+      <button id="close">X</button>
+    </div>
+    <button id="sprinkleSalt">Salt</button>
 
     <script src="./js/main.js"></script>
+    <script src="./js/view.js"></script>
+    <script src="./js/salt.js"></script>
   </body>
 </html>

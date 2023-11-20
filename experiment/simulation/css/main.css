@@ -8,8 +8,8 @@ body {
   height: 100vh;
   background-image: url(../images/bg.png);
   background-size: cover;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   /* overflow: hidden; */
 }
 
@@ -43,10 +43,31 @@ body {
   width: 50px;
 }
 
-#stage-micrometer {
+#stage-micrometer > img {
   width: 150px;
 }
 
-#stirer {
+#salt {
+  visibility: hidden;
+  position: relative;
+  width: 50px;
+  /* z-index: 1; */
+}
+
+#salt > #particle {
+  position: absolute;
+  display: inline-block;
+  width: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+/* #stirer {
   grid-column: 4;
+} */
+#sprinkleSalt {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
