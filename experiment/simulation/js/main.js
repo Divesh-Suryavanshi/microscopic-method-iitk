@@ -14,6 +14,12 @@ let beakerClicked = false;
 
 startAndResetAnimation();
 
+// accordian
+function toggleAccordion(element) {
+  const content = element.nextElementSibling;
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+
 function startAndResetAnimation() {
   stirer.addEventListener("click", stir);
   stageMicrometerContainer.addEventListener(
