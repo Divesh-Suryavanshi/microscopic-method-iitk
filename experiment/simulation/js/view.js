@@ -4,14 +4,6 @@ const stageContext = stageCanvas.getContext("2d");
 const eyeCanvas = document.querySelector(".eye-piece > canvas");
 const eyeContext = eyeCanvas.getContext("2d");
 
-const btnClose = document.querySelector("#close");
-
-// const salt = document.querySelector("#salt");
-
-btnClose.addEventListener("click", () => {
-  document.querySelector(".view").style.visibility = "hidden";
-});
-
 function stageAnimation() {
   const x = stageCanvas.width / 10;
   const y = stageCanvas.height / 2;
@@ -89,6 +81,10 @@ function controls(element) {
         break;
       case "ArrowLeft":
         handleArrowLeft();
+        break;
+      case "Escape":
+        view.style.visibility = "hidden";
+        blackoutCanvas.style.visibility = "hidden";
         break;
     }
   }
