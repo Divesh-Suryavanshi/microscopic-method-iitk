@@ -10,7 +10,7 @@ body {
   background-size: cover;
   display: grid;
   justify-items: center;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .experiment-area {

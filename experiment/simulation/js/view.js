@@ -6,6 +6,8 @@ const eyeContext = eyeCanvas.getContext("2d");
 
 const btnClose = document.querySelector("#close");
 
+// const salt = document.querySelector("#salt");
+
 btnClose.addEventListener("click", () => {
   document.querySelector(".view").style.visibility = "hidden";
 });
@@ -20,6 +22,8 @@ function stageAnimation() {
   let numLines = 100;
 
   let countLines = 0;
+
+  // stageContext.fon
 
   for (let n = 0, i = 0; n <= numLines; i += 4, n++) {
     let length = 10;
@@ -40,18 +44,23 @@ function eyeAnimation() {
   const x = eyeCanvas.width / 10;
   const y = eyeCanvas.height / 2;
   // eyeContext.lineWidth = 2;
+  eyeContext.font = "14px arial";
 
   // draw millimeter scale
   let mmScaleLength = 10;
   let numLines = 100;
 
   let countLines = 0;
+  let number = 0;
 
   for (let n = 0, i = 0; n <= numLines; i += 4, n++) {
     let length = 6;
     if (n % 5 === 0) length = 11;
     if (n % 10 === 0) {
       length = 15;
+      // eyeContext.moveTo()
+      eyeContext.fillText(number, x + i - 7, y - length - 5);
+      number += 10;
     }
     eyeContext.beginPath();
     eyeContext.moveTo(x + i, y - length);
@@ -62,7 +71,7 @@ function eyeAnimation() {
 
 eyeAnimation();
 
-function controls() {
+function controls(element) {
   // window.addEventListener("keyup", handleKeyUp);
   window.addEventListener("keydown", handleKeyDown);
   // window.addEventListener("keydown", handleKeyDown);
@@ -84,31 +93,31 @@ function controls() {
     }
   }
 
-  const eyePiece = eyeCanvas.parentElement;
+  // const eyePiece = eyeCanvas.parentElement;
   let eyePiecePositionY = 0;
   let eyePiecePositionX = 0;
   function handleArrowDown() {
     eyePiecePositionY += 5;
-    // eyePiece.style.top = eyePiecePositionY + "px";
-    eyePiece.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
+    // element.style.top = eyePiecePositionY + "px";
+    element.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
   }
 
   function handleArrowUp() {
     eyePiecePositionY -= 5;
-    // eyePiece.style.top = eyePiecePositionY + "px";
-    eyePiece.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
+    // element.style.top = eyePiecePositionY + "px";
+    element.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
   }
 
   function handleArrowRight() {
     eyePiecePositionX += 5;
-    // eyePiece.style.left = eyePiecePositionX + "px";
-    eyePiece.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
+    // element.style.left = eyePiecePositionX + "px";
+    element.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
   }
 
   function handleArrowLeft() {
     eyePiecePositionX -= 5;
-    eyePiece.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
+    element.style.transform = `translate(${eyePiecePositionX}px,${eyePiecePositionY}px)`;
   }
 }
 
-controls();
+controls(eyeCanvas.parentElement);
